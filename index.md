@@ -1,5 +1,3 @@
-Here you can say lots of fun things about your site.
+Hey this is Aniruddha (Ani)
 
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+I am building SameThing.AI as a collective effort to push boundaries in developing scalable self sustaining and self correcting AI architecture products.

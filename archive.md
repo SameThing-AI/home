@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Blog Archive
+title: Daily updates
 ---
 
 {% for tag in site.tags %}
