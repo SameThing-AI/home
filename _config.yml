@@ -6,6 +6,9 @@ description: "What I do everyday goes here!" # This will show up in places like 
 url: "https://samething-ai.github.io"
 baseurl: "/home"
 
+# Permalink structure
+permalink: /:year/:month/:day/:title/
+
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
 email: "samething.solutions@gmail.com"
