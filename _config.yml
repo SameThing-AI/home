@@ -12,7 +12,7 @@ permalink: /:year/:month/:day/:title/
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
 email: "samething.solutions@gmail.com"
-github_username: "akulka404"
+github_username: "SameThing-AI"
 linkedin_username: "SameThing.AI"
 #facebook_username: username
 #flickr_username: username
@@ -26,7 +26,7 @@ instagram_username: "samething.ai"
 #########################################################################################
 theme: "minima"
 
-rss: rss
+# rss: rss
 
 kramdown:
   syntax_highlighter_opts:
