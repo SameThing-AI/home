@@ -13,7 +13,7 @@ permalink: /:year/:month/:day/:title/
 # All of these are optional and can be removed or commented out
 email: "samething.solutions@gmail.com"
 github_username: "SameThing-AI"
-linkedin_username: "SameThing.AI"
+linkedin_username: "company/SameThing.AI"
 #facebook_username: username
 #flickr_username: username
 instagram_username: "samething.ai"
