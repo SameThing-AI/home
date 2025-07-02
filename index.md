@@ -3,10 +3,10 @@ layout: page
 # title: "SameThing.AI - Building the Future of AI-Powered Solutions"
 ---
  -->
-# Welcome to SameThing.AI
+# Welcome to
 
 <div style="text-align: center; margin: 2rem 0;">
-  <img src="/assets/images/linkedin%20banner.png" alt="SameThing.AI LinkedIn Banner" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <img src="{{ site.baseurl }}/assets/images/linkedin%20banner.png" alt="SameThing.AI LinkedIn Banner" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
 
 ## About Me
@@ -132,4 +132,4 @@ This isn't just about building a company - it's about documenting the real journ
 
 *"The goal isn't to win a race or reach a finish line - it's to move forward on a path where the destination is unknown but the direction is clear."*
 
-**Building the future, one day at a time.**
+**Building for the future, one day at a time.**
