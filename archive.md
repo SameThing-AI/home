@@ -3,9 +3,9 @@ layout: page
 title: Archive
 ---
 
-# Archive
+# Monthly Progress
 
-All posts organized by month.
+<!-- All posts organized by month. -->
 
 {% assign posts_by_month = site.posts | group_by_exp: "post", "post.date | date: '%B %Y'" | sort: "name" | reverse %}
 
@@ -22,10 +22,10 @@ All posts organized by month.
                style="text-decoration: none; color: #0366d6; font-weight: 500; flex: 1; margin-right: 1rem;"
                onmouseover="this.style.color='#0056b3'" 
                onmouseout="this.style.color='#0366d6'">
-              {{ post.date | date: "%B %d" }} - {{ post.title | replace: "Day ", "Week 4, Day " | replace: "W2D", "Week 2, Day " }}
+              {{ post.date | date: "%B %d" }}
             </a>
             <span style="color: #586069; font-size: 0.875rem; white-space: nowrap;">
-              {{ post.date | date: "%Y" }}
+              date: {{ post.date | date: "%Y-%m-%d" }} time started: {{ post.time_started | default: "N/A" }} time ended: {{ post.time_ended | default: "N/A" }}
             </span>
           </div>
           {% if post.excerpt %}

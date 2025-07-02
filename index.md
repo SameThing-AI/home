@@ -72,14 +72,14 @@ We're building an intelligent hiring platform that:
 ## Our Journey So Far
 
 ### Week 1: Foundation & Discovery
-- **Day 0**: Started with no job experience but big dreams - documented the beginning of this journey
-- **Day 1**: Built an article intelligence system and established social media presence
-- **Day 2**: Focused on metrics and validation strategies
-- **Day 3**: Received brutal investor feedback that changed everything - learned that market research comes before building
+- **June 24**: Started with no job experience but big dreams - documented the beginning of this journey
+- **June 25**: Built an article intelligence system and established social media presence
+- **June 26**: Focused on metrics and validation strategies
+- **June 27**: Received brutal investor feedback that changed everything - learned that market research comes before building
 
 ### Week 2: Strategic Pivot & Execution
-- **W2D1**: Deep dive into market research, YC application preparation, and the 2:20:200 validation framework
-- **W2D2**: Late-night AI-assisted coding sessions, recruiter outreach (60+ emails sent), and company website development
+- **June 30**: Deep dive into market research, YC application preparation, and the 2:20:200 validation framework
+- **July 1**: Late-night AI-assisted coding sessions, recruiter outreach (60+ emails sent), and company website development
 
 <!-- ## Key Achievements
 
