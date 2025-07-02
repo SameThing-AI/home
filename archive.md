@@ -3,8 +3,6 @@ layout: page
 title: Archive
 ---
 
-{% include header-nav.html %}
-
 # Monthly Progress
 
 <!-- All posts organized by month. -->

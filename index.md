@@ -3,9 +3,6 @@ layout: page
 # title: "SameThing.AI - Building the Future of AI-Powered Solutions"
 ---
  -->
-
-{% include header-nav.html %}
-
 # Welcome to SameThing.AI
 
 <div style="text-align: center; margin: 2rem 0;">
