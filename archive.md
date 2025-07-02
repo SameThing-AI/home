@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Daily updates
+title: Updates
 ---
 
 {% for tag in site.tags %}
