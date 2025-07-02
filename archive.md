@@ -3,6 +3,8 @@ layout: page
 title: Archive
 ---
 
+{% include header-nav.html %}
+
 # Monthly Progress
 
 <!-- All posts organized by month. -->
@@ -39,11 +41,11 @@ title: Archive
   </div>
 {% endfor %}
 
-<div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f6f8fa; border-radius: 8px;">
+<!-- <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f6f8fa; border-radius: 8px;">
   <p style="margin: 0; color: #586069; font-size: 0.875rem;">
     📚 <strong>{{ site.posts.size }}</strong> posts and counting...
   </p>
   <p style="margin: 0.5rem 0 0 0; color: #586069; font-size: 0.875rem;">
     Follow the journey from Day 0 to building the future of AI-powered solutions.
   </p>
-</div>
+</div> -->
