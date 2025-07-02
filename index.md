@@ -3,7 +3,8 @@ layout: page
 # title: "SameThing.AI - Building the Future of AI-Powered Solutions"
 ---
  -->
-# Welcome to
+# Welcome to SameThing.AI
+
 <div style="text-align: center; margin: 2rem 0;">
   <img src="{{ site.baseurl }}/assets/images/linkedin%20banner.png" alt="SameThing.AI LinkedIn Banner" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
