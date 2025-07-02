@@ -5,6 +5,10 @@ layout: page
  -->
 # Welcome to SameThing.AI
 
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/linkedin%20banner.png" alt="SameThing.AI LinkedIn Banner" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+</div>
+
 ## About Me
 
 Hey, I'm **Aniruddha (Ani) Kulkarni** - a solo founder building the future of AI-powered solutions. I'm documenting my journey from zero to building scalable, self-sustaining, and self-correcting AI architecture products.
