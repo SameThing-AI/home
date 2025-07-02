@@ -42,7 +42,7 @@ We're building an intelligent hiring platform that:
 - **W2D1**: Deep dive into market research, YC application preparation, and the 2:20:200 validation framework
 - **W2D2**: Late-night AI-assisted coding sessions, recruiter outreach (60+ emails sent), and company website development
 
-## Key Achievements
+<!-- ## Key Achievements
 
 ### Technical Development
 - ✅ **Article Intelligence System**: Automated content curation and summarization platform
@@ -60,7 +60,7 @@ We're building an intelligent hiring platform that:
 - ✅ **YC Application Preparation**: Research and framework development
 - ✅ **Social Media Presence**: LinkedIn and Instagram pages established
 - ✅ **Content Strategy**: Daily documentation and journey sharing
-- ✅ **Administrative Setup**: Legal and business foundation
+- ✅ **Administrative Setup**: Legal and business foundation -->
 
 ## Our Approach: AI-First Development
 
