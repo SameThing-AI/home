@@ -24,9 +24,9 @@ title: Archive
                onmouseout="this.style.color='#0366d6'">
               {{ post.date | date: "%B %d" }}
             </a>
-            <span style="color: #586069; font-size: 0.875rem; white-space: nowrap;">
+            <!-- <span style="color: #586069; font-size: 0.875rem; white-space: nowrap;">
               date: {{ post.date | date: "%Y-%m-%d" }} time started: {{ post.time_started | default: "N/A" }} time ended: {{ post.time_ended | default: "N/A" }}
-            </span>
+            </span> -->
           </div>
           {% if post.excerpt %}
             <p style="margin: 0.5rem 0 0 0; color: #586069; font-size: 0.875rem; line-height: 1.4;">
