@@ -1,8 +1,8 @@
----
+<!-- ---
 layout: page
 # title: "SameThing.AI - Building the Future of AI-Powered Solutions"
 ---
-
+ -->
 # Welcome to SameThing.AI
 
 ## About Me
