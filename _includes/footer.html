@@ -3,22 +3,7 @@
 
   <div class="wrapper">
 
-    <!-- Views Counter Badge - Top Right -->
-    <div class="views-counter" style="position: absolute; top: 20px; right: 20px; z-index: 10;">
-      <span style="display: inline-block; background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 4px 8px; font-size: 12px; color: #586069;">
-        <svg style="width: 12px; height: 12px; margin-right: 4px; vertical-align: middle;" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H6a.5.5 0 0 1 0-1h1.5V3.5A.5.5 0 0 1 8 3z"/>
-          <path d="M3.732 1.732a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 1 1-.707.707L3.732 2.439a.5.5 0 0 1 0-.707z"/>
-          <path d="M.5 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H1.5v1.5a.5.5 0 0 1-1 0V8z"/>
-          <path d="M1.732 12.268a.5.5 0 0 1 .707 0l1.414-1.414a.5.5 0 1 1-.707.707L1.732 12.975a.5.5 0 0 1 0-.707z"/>
-          <path d="M8 13a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V8z"/>
-          <path d="M12.268 12.268a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707z"/>
-          <path d="M15.5 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h1.5V6.5a.5.5 0 0 1 1 0V8z"/>
-          <path d="M14.268 3.732a.5.5 0 0 1-.707 0l-1.414 1.414a.5.5 0 0 1 .707.707l1.414-1.414a.5.5 0 0 1 0-.707z"/>
-        </svg>
-        <span id="views-counter">Loading views...</span>
-      </span>
-    </div>
+
 
     <h2 class="footer-heading">{{ site.title | escape }}</h2>
 
@@ -45,6 +30,23 @@
       <div class="footer-col footer-col-3">
         <p>{{- site.description | default: site.github.project_tagline | escape -}}</p>
       </div>
+    </div>
+
+    <!-- Views Counter Badge - Bottom Center -->
+    <div class="views-counter" style="text-align: center; margin-top: 20px; padding: 15px 0; border-top: 1px solid #e1e4e8;">
+      <span style="display: inline-block; background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 6px 12px; font-size: 12px; color: #586069; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <svg style="width: 12px; height: 12px; margin-right: 6px; vertical-align: middle;" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H6a.5.5 0 0 1 0-1h1.5V3.5A.5.5 0 0 1 8 3z"/>
+          <path d="M3.732 1.732a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 1 1-.707.707L3.732 2.439a.5.5 0 0 1 0-.707z"/>
+          <path d="M.5 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H1.5v1.5a.5.5 0 0 1-1 0V8z"/>
+          <path d="M1.732 12.268a.5.5 0 0 1 .707 0l1.414-1.414a.5.5 0 1 1-.707.707L1.732 12.975a.5.5 0 0 1 0-.707z"/>
+          <path d="M8 13a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V8z"/>
+          <path d="M12.268 12.268a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707z"/>
+          <path d="M15.5 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h1.5V6.5a.5.5 0 0 1 1 0V8z"/>
+          <path d="M14.268 3.732a.5.5 0 0 1-.707 0l-1.414 1.414a.5.5 0 0 1 .707.707l1.414-1.414a.5.5 0 0 1 0-.707z"/>
+        </svg>
+        <span id="views-counter">Loading views...</span>
+      </span>
     </div>
 
   </div>
