@@ -26,7 +26,6 @@ title: Archive
   {% for post in week.items %}
     {% if forloop.first %}
       {% assign week_name = post.date | date: "Week of %B %d, %Y" %}
-      <!-- Hardcoded weekly hours - TODO: Calculate automatically -->
       {% assign week_start_date = post.date | date: "%Y-%m-%d" %}
       {% if week_start_date >= "2025-06-24" and week_start_date <= "2025-06-27" %}
         {% assign week_hours = 28.2 %}
