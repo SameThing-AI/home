@@ -3,19 +3,62 @@ layout: page
 title: Archive
 ---
 
-# Monthly Progress
+# Weekly Progress & Time Tracking
 
-<!-- All posts organized by month. -->
+<!-- All posts organized by week with hours worked calculation. -->
 
-{% assign posts_by_month = site.posts | group_by_exp: "post", "post.date | date: '%B %Y'" | sort: "name" | reverse %}
+{% assign posts_by_week = site.posts | group_by_exp: "post", "post.date | date: '%Y-W%U'" | sort: "name" | reverse %}
 
-{% for month in posts_by_month %}
-  <div class="month-group" style="margin-bottom: 2rem; padding: 1rem; border-left: 3px solid #e1e4e8; background: #f6f8fa; border-radius: 0 6px 6px 0;">
-    <h2 style="margin: 0 0 1rem 0; color: #24292e; font-size: 1.5rem; font-weight: 600;">
-      {{ month.name }}
-    </h2>
+{% for week in posts_by_week %}
+  {% assign week_hours = 0 %}
+  {% assign week_name = "" %}
+  {% for post in week.items %}
+    {% if post.time_started and post.time_ended %}
+      {% assign start_parts = post.time_started | split: ":" %}
+      {% assign end_parts = post.time_ended | split: ":" %}
+      {% assign start_hour = start_parts[0] | plus: 0 %}
+      {% assign start_min = start_parts[1] | split: " " | first | plus: 0 %}
+      {% assign end_hour = end_parts[0] | plus: 0 %}
+      {% assign end_min = end_parts[1] | split: " " | first | plus: 0 %}
+      
+      {% if post.time_started contains "PM" and start_hour != 12 %}
+        {% assign start_hour = start_hour | plus: 12 %}
+      {% endif %}
+      {% if post.time_started contains "AM" and start_hour == 12 %}
+        {% assign start_hour = 0 %}
+      {% endif %}
+      {% if post.time_ended contains "PM" and end_hour != 12 %}
+        {% assign end_hour = end_hour | plus: 12 %}
+      {% endif %}
+      {% if post.time_ended contains "AM" and end_hour == 12 %}
+        {% assign end_hour = 0 %}
+      {% endif %}
+      
+      {% assign start_total_min = start_hour | times: 60 | plus: start_min %}
+      {% assign end_total_min = end_hour | times: 60 | plus: end_min %}
+      {% assign duration_min = end_total_min | minus: start_total_min %}
+      {% if duration_min < 0 %}
+        {% assign duration_min = duration_min | plus: 1440 %}
+      {% endif %}
+      {% assign duration_hours = duration_min | divided_by: 60.0 %}
+      {% assign week_hours = week_hours | plus: duration_hours %}
+    {% endif %}
+    {% if forloop.first %}
+      {% assign week_name = post.date | date: "Week of %B %d, %Y" %}
+    {% endif %}
+  {% endfor %}
+  
+  <div class="week-group" style="margin-bottom: 2rem; padding: 1rem; border-left: 3px solid #28a745; background: #f8f9fa; border-radius: 0 6px 6px 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;">
+      <h2 style="margin: 0; color: #24292e; font-size: 1.5rem; font-weight: 600;">
+        {{ week_name }}
+      </h2>
+      <div style="background: #28a745; color: white; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.875rem; font-weight: 500; margin-left: 1rem;">
+        {{ week_hours | round: 1 }}h worked
+      </div>
+    </div>
     <ul style="list-style: none; padding: 0; margin: 0;">
-      {% for post in month.items %}
+      {% for post in week.items %}
         <li style="margin-bottom: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid #e1e4e8;">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
             <a href="{{ site.baseurl }}{{ post.url }}" 
@@ -24,9 +67,11 @@ title: Archive
                onmouseout="this.style.color='#0366d6'">
               {{ post.date | date: "%B %d" }}
             </a>
-            <!-- <span style="color: #586069; font-size: 0.875rem; white-space: nowrap;">
-              date: {{ post.date | date: "%Y-%m-%d" }} time started: {{ post.time_started | default: "N/A" }} time ended: {{ post.time_ended | default: "N/A" }}
-            </span> -->
+            {% if post.time_started and post.time_ended %}
+              <span style="color: #6f42c1; font-size: 0.75rem; white-space: nowrap; background: #f8f9fa; padding: 0.125rem 0.5rem; border-radius: 8px; border: 1px solid #e1e4e8;">
+                {{ post.time_started }} - {{ post.time_ended }}
+              </span>
+            {% endif %}
           </div>
           {% if post.summary %}
             <p style="margin: 0.5rem 0 0 0; color: #586069; font-size: 0.875rem; line-height: 1.4;">
