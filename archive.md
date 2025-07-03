@@ -13,33 +13,43 @@ title: Archive
   {% assign week_hours = 0 %}
   {% assign week_name = "" %}
   {% for post in week.items %}
-    {% if post.time_started and post.time_ended %}
-      {% assign start_parts = post.time_started | split: ":" %}
-      {% assign end_parts = post.time_ended | split: ":" %}
+    {% assign time_started = post["time started"] %}
+    {% assign time_ended = post["time ended"] %}
+    {% if time_started and time_ended %}
+      {% assign start_parts = time_started | split: ":" %}
+      {% assign end_parts = time_ended | split: ":" %}
       {% assign start_hour = start_parts[0] | plus: 0 %}
-      {% assign start_min = start_parts[1] | split: " " | first | plus: 0 %}
-      {% assign end_hour = end_parts[0] | plus: 0 %}
-      {% assign end_min = end_parts[1] | split: " " | first | plus: 0 %}
+      {% assign start_min_part = start_parts[1] | split: " " %}
+      {% assign start_min = start_min_part[0] | plus: 0 %}
+      {% assign start_ampm = start_min_part[1] %}
       
-      {% if post.time_started contains "PM" and start_hour != 12 %}
+      {% assign end_hour = end_parts[0] | plus: 0 %}
+      {% assign end_min_part = end_parts[1] | split: " " %}
+      {% assign end_min = end_min_part[0] | plus: 0 %}
+      {% assign end_ampm = end_min_part[1] %}
+      
+      <!-- Convert to 24-hour format -->
+      {% if start_ampm == "PM" and start_hour != 12 %}
         {% assign start_hour = start_hour | plus: 12 %}
-      {% endif %}
-      {% if post.time_started contains "AM" and start_hour == 12 %}
+      {% elsif start_ampm == "AM" and start_hour == 12 %}
         {% assign start_hour = 0 %}
       {% endif %}
-      {% if post.time_ended contains "PM" and end_hour != 12 %}
+      
+      {% if end_ampm == "PM" and end_hour != 12 %}
         {% assign end_hour = end_hour | plus: 12 %}
-      {% endif %}
-      {% if post.time_ended contains "AM" and end_hour == 12 %}
+      {% elsif end_ampm == "AM" and end_hour == 12 %}
         {% assign end_hour = 0 %}
       {% endif %}
       
       {% assign start_total_min = start_hour | times: 60 | plus: start_min %}
       {% assign end_total_min = end_hour | times: 60 | plus: end_min %}
       {% assign duration_min = end_total_min | minus: start_total_min %}
+      
+      <!-- Handle overnight sessions -->
       {% if duration_min < 0 %}
         {% assign duration_min = duration_min | plus: 1440 %}
       {% endif %}
+      
       {% assign duration_hours = duration_min | divided_by: 60.0 %}
       {% assign week_hours = week_hours | plus: duration_hours %}
     {% endif %}
@@ -67,9 +77,11 @@ title: Archive
                onmouseout="this.style.color='#0366d6'">
               {{ post.date | date: "%B %d" }}
             </a>
-            {% if post.time_started and post.time_ended %}
+            {% assign time_started = post["time started"] %}
+            {% assign time_ended = post["time ended"] %}
+            {% if time_started and time_ended %}
               <span style="color: #6f42c1; font-size: 0.75rem; white-space: nowrap; background: #f8f9fa; padding: 0.125rem 0.5rem; border-radius: 8px; border: 1px solid #e1e4e8;">
-                {{ post.time_started }} - {{ post.time_ended }}
+                {{ time_started }} - {{ time_ended }}
               </span>
             {% endif %}
           </div>
