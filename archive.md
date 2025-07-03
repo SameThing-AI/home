@@ -28,7 +28,11 @@ title: Archive
               date: {{ post.date | date: "%Y-%m-%d" }} time started: {{ post.time_started | default: "N/A" }} time ended: {{ post.time_ended | default: "N/A" }}
             </span> -->
           </div>
-          {% if post.excerpt %}
+          {% if post.summary %}
+            <p style="margin: 0.5rem 0 0 0; color: #586069; font-size: 0.875rem; line-height: 1.4;">
+              {{ post.summary }}
+            </p>
+          {% elsif post.excerpt %}
             <p style="margin: 0.5rem 0 0 0; color: #586069; font-size: 0.875rem; line-height: 1.4;">
               {{ post.excerpt | strip_html | truncatewords: 20 }}
             </p>
