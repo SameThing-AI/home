@@ -10,11 +10,6 @@ title: Archive
 {% assign posts_by_week = site.posts | group_by_exp: "post", "post.date | date: '%Y-W%U'" | sort: "name" | reverse %}
 
 ---
-layout: page
-title: Archive
----
-
-# Weekly Progress & Time Tracking
 
 <!-- All posts organized by week with hardcoded hours worked. -->
 
