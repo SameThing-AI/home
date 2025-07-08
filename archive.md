@@ -21,12 +21,37 @@ title: Archive
   {% for post in week.items %}
     {% if forloop.first %}
       {% assign week_name = post.date | date: "Week of %B %d, %Y" %}
-      {% assign week_start_date = post.date | date: "%Y-%m-%d" %}
-      {% if week_start_date >= "2025-06-24" and week_start_date <= "2025-06-27" %}
-        {% assign week_hours = 28.2 %}
-      {% elsif week_start_date >= "2025-06-30" and week_start_date <= "2025-07-02" %}
-        {% assign week_hours = 20.5 %}
+    {% endif %}
+    
+    {% comment %} Calculate hours for each post {% endcomment %}
+    {% assign time_started = post["time started"] %}
+    {% assign time_ended = post["time ended"] %}
+    {% if time_started and time_ended %}
+      {% comment %} Parse start time {% endcomment %}
+      {% assign start_hour = time_started | split: ":" | first | plus: 0 %}
+      {% assign start_minute = time_started | split: ":" | last | split: " " | first | plus: 0 %}
+      {% if time_started contains "PM" and start_hour != 12 %}
+        {% assign start_hour = start_hour | plus: 12 %}
+      {% elsif time_started contains "AM" and start_hour == 12 %}
+        {% assign start_hour = 0 %}
       {% endif %}
+      
+      {% comment %} Parse end time {% endcomment %}
+      {% assign end_hour = time_ended | split: ":" | first | plus: 0 %}
+      {% assign end_minute = time_ended | split: ":" | last | split: " " | first | plus: 0 %}
+      {% if time_ended contains "PM" and end_hour != 12 %}
+        {% assign end_hour = end_hour | plus: 12 %}
+      {% elsif time_ended contains "AM" and end_hour == 12 %}
+        {% assign end_hour = 0 %}
+      {% endif %}
+      
+      {% comment %} Calculate duration in hours {% endcomment %}
+      {% assign start_total_minutes = start_hour | times: 60 | plus: start_minute %}
+      {% assign end_total_minutes = end_hour | times: 60 | plus: end_minute %}
+      {% assign duration_minutes = end_total_minutes | minus: start_total_minutes %}
+      {% assign post_hours = duration_minutes | divided_by: 60.0 %}
+      
+      {% assign week_hours = week_hours | plus: post_hours %}
     {% endif %}
   {% endfor %}
   
@@ -36,7 +61,7 @@ title: Archive
         {{ week_name }}
       </h2>
       <div style="background: #28a745; color: white; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.875rem; font-weight: 500; margin-left: 1rem;">
-        {{ week_hours }}h worked
+        {{ week_hours | round: 1 }}h worked
       </div>
     </div>
     <ul style="list-style: none; padding: 0; margin: 0;">
