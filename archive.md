@@ -24,8 +24,8 @@ title: Archive
     {% endif %}
     
     {% comment %} Calculate hours for each post {% endcomment %}
-    {% assign time_started = post["time started"] %}
-    {% assign time_ended = post["time ended"] %}
+    {% assign time_started = post.time_started %}
+    {% assign time_ended = post.time_ended %}
     {% if time_started and time_ended %}
       {% comment %} Parse start time {% endcomment %}
       {% assign start_hour = time_started | split: ":" | first | plus: 0 %}
@@ -74,8 +74,8 @@ title: Archive
                onmouseout="this.style.color='#0366d6'">
               {{ post.date | date: "%B %d" }}
             </a>
-            {% assign time_started = post["time started"] %}
-            {% assign time_ended = post["time ended"] %}
+            {% assign time_started = post.time_started %}
+            {% assign time_ended = post.time_ended %}
             {% if time_started and time_ended %}
               <span style="color: #6f42c1; font-size: 0.75rem; white-space: nowrap; background: #f8f9fa; padding: 0.125rem 0.5rem; border-radius: 8px; border: 1px solid #e1e4e8;">
                 {{ time_started }} - {{ time_ended }}
