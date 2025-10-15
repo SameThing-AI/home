@@ -44,25 +44,9 @@ layout: page
   </div>
 </div>
 
-## About the Journey
-
-## The Mission: 
-
-Traditional hiring is fundamentally flawed - companies miss great talent due to biased processes, and candidates can't showcase their true potential. We're building an **AI-powered assessment platform** that evaluates skills through real-world scenarios, not arbitrary tests.
-
-## The Innovation: Chaos Sandbox Assessments
-
-### Key Breakthroughs:
-
-## Current Status:
-
-## The Outreach Reality:
-
-## Current Focus & Next Steps
+## Made some early mistakes. Now building right; focusing on customer discovery first. 
 
 **Follow the complete journey**: Check out our **[Archive]({{ site.baseurl }}/archive)** for detailed daily documentation of every step, challenge, and breakthrough.
-
-*Building the future of hiring, one breakthrough at a time.*
 
 ## Contact & Connect
 
