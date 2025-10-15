@@ -48,7 +48,7 @@ layout: page
 
 **Follow the complete journey**: Check out our **[Archive]({{ site.baseurl }}/archive)** for detailed daily documentation of every step, challenge, and breakthrough.
 
-## Contact & Connect
+<!-- ## Contact & Connect
 
 <div style="text-align: center; margin: 1.5rem 0; padding: 1rem 0;">
   <div style="display: inline-flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; justify-content: center;">
@@ -82,7 +82,7 @@ layout: page
     </a>
     
   </div>
-</div>
+</div> -->
 
 ---
 
